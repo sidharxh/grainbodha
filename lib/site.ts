@@ -15,3 +15,9 @@ export const products = [
   { slug: "black-pepper-makhana", name: "Black Pepper Makhana", flavor: "Black Pepper", description: "A savory roasted makhana flavor with a peppery finish.", color: "sage", icon: "●" },
   { slug: "pudina-makhana", name: "Pudina Makhana", flavor: "Mint & Pudina", description: "A mint-forward take on roasted makhana for a fresh, savory bite.", color: "mint", icon: "❋" },
 ];
+
+export const productCategories = [
+  { name: "Makhana", description: "Our signature roasted makhana, rooted in Indian food traditions and made for everyday snacking.", icon: "✳", featured: true },
+  { name: "Nuts", description: "A growing selection of quality nuts for snacking, cooking and sharing.", icon: "◉", featured: false },
+  { name: "Seeds", description: "Versatile seeds selected for wholesome snacks and pantry staples.", icon: "❋", featured: false },
+];

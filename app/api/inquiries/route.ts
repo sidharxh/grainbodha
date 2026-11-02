@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   if (!data || typeof data !== "object") return NextResponse.json({ error: "Invalid form submission." }, { status: 400 });
   const { name, phone, email, business, quantity, city, message, variant } = data as Record<string, unknown>;
   if (typeof name !== "string" || !name.trim() || typeof phone !== "string" || !phone.trim() || typeof message !== "string" || !message.trim()) return NextResponse.json({ error: "Please provide your name, phone number and message." }, { status: 400 });
-  const recipient = process.env.CONTACT_EMAIL;
+  const recipient = process.env.CONTACT_EMAIL ?? "grainbodhaglobalfood@gmail.com";
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.INQUIRY_FROM_EMAIL;
   if (!recipient || !apiKey || !from) return NextResponse.json({ error: "The enquiry service is not configured yet. Please contact Grainbodha directly." }, { status: 503 });

@@ -1,7 +1,7 @@
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://grainbodha.com";
-export const businessEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "";
-export const businessPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "";
-export const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
+export const businessEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "grainbodhaglobalfood@gmail.com";
+export const businessPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "9452062975";
+export const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "919452062975";
 
 export const products = [
   { slug: "classic-salted-makhana", name: "Classic Salted Makhana", flavour: "Classic Salted", description: "Lightly seasoned roasted makhana with a simple, savoury finish.", image: "/images/grainbodha-makhana-packs.jpg", color: "cream" },

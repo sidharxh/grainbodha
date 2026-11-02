@@ -16,24 +16,24 @@ Pricing is enquiry-only. The site does not publish product prices or estimates. 
 
 The supplied product images are design concepts. Confirm final product names, formulations, labels, pack sizes, claims and availability before treating them as live sale listings.
 
-## Email enquiries
+## Contact form and Google Sheets
 
-Website form submissions are sent server-side through Resend. Configure these environment variables in local `.env.local` and in the deployment environment:
+The contact and bulk order forms submit to `/api/contact`. The route appends an India-time timestamp, name, email, phone, enquiry type, business, quantity, delivery city and message to the `Contacts` tab of a Google Sheet. It returns success only when the append succeeds; if credentials, sheet access or the request fail, the form displays an error.
 
-- `CONTACT_EMAIL`: the inbox that receives enquiries.
-- `RESEND_API_KEY`: Resend API key.
-- `INQUIRY_FROM_EMAIL`: sender address on a domain verified with Resend.
-- `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_CONTACT_PHONE`, `NEXT_PUBLIC_WHATSAPP_NUMBER`: verified public contact details displayed on the site.
-- `NEXT_PUBLIC_SITE_URL`: canonical production origin, for example `https://grainbodha.com` once confirmed.
+Configure these environment variables in Vercel (and `.env.local` for local development):
 
-Do not commit API keys. The form reports an error until email delivery is configured.
+- `GOOGLE_CLIENT_EMAIL`: Google service-account email.
+- `GOOGLE_PRIVATE_KEY`: service-account private key. Store as a secret; preserve newlines or use `\\n` sequences.
+- `SHEET_ID`: spreadsheet ID from its URL.
+- `NEXT_PUBLIC_SITE_URL`: canonical production website URL.
+- Optional public contacts: `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_CONTACT_PHONE`, `NEXT_PUBLIC_WHATSAPP_NUMBER`.
+
+Create a `Contacts` sheet tab with this header row in columns A:I: `Timestamp`, `Name`, `Email`, `Phone`, `Enquiry Type`, `Business`, `Estimated Quantity`, `Delivery City`, `Message`. Share the spreadsheet with `GOOGLE_CLIENT_EMAIL` and grant Editor access. Never commit service-account credentials.
 
 ## Run locally
 
 ```bash
-pnpm install
+npm install
 cp .env.example .env.local
-pnpm dev
+npm run dev
 ```
-
-The repository supplied with this task was empty, so this app was scaffolded in the local `grainbodha/` resource directory.

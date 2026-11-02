@@ -1,4 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-export const metadata: Metadata = { title: "Bulk Makhana & Wholesale Enquiries", description: "Ask Grainbodha about bulk roasted makhana, wholesale supply, retail stocking and business orders.", alternates: { canonical: "/bulk-orders" } };
-export default function BulkOrders() { return <><div className="breadcrumb"><Link href="/">Home</Link><span> / </span>Retail & bulk orders</div><section className="bulk-page"><div className="page-intro"><span className="eyebrow">FOR RETAIL & TRADE</span><h1>Let’s discuss<br /><em>your requirements.</em></h1><p>Looking to stock roasted makhana, arrange a workplace order or explore a wholesale conversation? Contact our team and we’ll follow up about your requirements.</p><div className="business-note"><span>01</span><p>When you contact us, include your business type, estimated quantity, preferred product and delivery city so we can respond with relevant details.</p></div><Link href="/contact" className="button button-dark">Phone, email or WhatsApp <span>↗</span></Link></div><div className="bulk-contact-card"><span className="eyebrow">DIRECT CONTACT</span><h2>Tell us what you need.</h2><p>Our team will discuss current products, availability and pricing directly.</p><Link href="/contact" className="text-link">View all contact details <span>→</span></Link></div></section></> }
+
+export const metadata: Metadata = {
+  title: "U.S. Wholesale Makhana & Fox Nuts",
+  description: "Source roasted Indian makhana for U.S. retail, distribution and food businesses. Contact Grainbodha to discuss wholesale quantities, pricing and delivery by state.",
+  alternates: { canonical: "/bulk-orders" },
+};
+
+export default function BulkOrders() {
+  return <>
+    <div className="breadcrumb"><Link href="/">Home</Link><span> / </span>U.S. wholesale</div>
+    <section className="bulk-page">
+      <div className="page-intro">
+        <span className="eyebrow">RETAIL · DISTRIBUTION · FOOD SERVICE</span>
+        <h1>Indian makhana<br /><em>for U.S. shelves.</em></h1>
+        <p>Bring a distinctive Indian snack to your customers. Grainbodha welcomes conversations with American retailers, importers, distributors and food businesses.</p>
+        <div className="business-note"><span>01</span><p>When you call or email, share your business type, destination state, preferred flavors and estimated quantity. We’ll respond with current product and delivery information.</p></div>
+        <Link href="/contact" className="button button-dark">Discuss wholesale with us <span>↗</span></Link>
+      </div>
+      <div className="bulk-contact-card"><span className="eyebrow">YOUR U.S. MARKET, OUR INDIAN ROOTS</span><h2>Let’s explore what’s possible.</h2><p>From first product questions to a larger sourcing conversation, our team can help you understand the Grainbodha range and current options for your location.</p><Link href="/contact" className="text-link">Call, email or WhatsApp <span>→</span></Link></div>
+    </section>
+  </>;
+}
